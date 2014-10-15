@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="unspecified" >
+        <source path="/Users/liudonghua/code/android/Android-ViewPagerIndicator/sample/build/intermediates/exploded-aar/Android-ViewPagerIndicator/library/unspecified/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/Users/liudonghua/code/android/Android-ViewPagerIndicator/sample/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/liudonghua/code/android/Android-ViewPagerIndicator/sample/build-types/debug/assets" />
+    </dataSet>
+
+</merger>
