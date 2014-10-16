@@ -64,7 +64,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         }
     };
 
-    private final IcsLinearLayout mTabLayout;
+    protected IcsLinearLayout mTabLayout;
 
     private ViewPager mViewPager;
     private ViewPager.OnPageChangeListener mListener;
@@ -149,7 +149,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         }
     }
 
-    private void addTab(int index, CharSequence text, int iconResId) {
+    protected void addTab(int index, CharSequence text, int iconResId) {
         final TabView tabView = new TabView(getContext());
         tabView.mIndex = index;
         tabView.setFocusable(true);

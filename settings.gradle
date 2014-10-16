@@ -1,2 +1,2 @@
-include ':library'
+include ':library', ':nested_tab_demo'
 include ':sample'
