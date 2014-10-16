@@ -18,49 +18,18 @@ public class SubOneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.sub_one_fragment_view, null);
 
-        FragmentPagerAdapter adapter = new SubOneFragmentPagerAdapter(getFragmentManager());
+        String[] titles = getActivity().getResources().getStringArray(R.array.sub_one_texts);
+        int[] icons = Utils.getResourceIdArray(getActivity(), R.array.sub_one_icons);
+        String[] contents = getActivity().getResources().getStringArray(R.array.sub_one_contents);
+        FragmentPagerAdapter adapter = new SubOneFragmentPagerAdapter(getChildFragmentManager(), titles, icons, contents);
 
         ViewPager pager = (ViewPager)rootView.findViewById(R.id.pager);
         pager.setAdapter(adapter);
 
-        TabPageIndicator indicator = (CustomTabPageIndicator)rootView.findViewById(R.id.indicator);
+        TabPageIndicator indicator = (TabPageIndicator)rootView.findViewById(R.id.indicator);
         indicator.setViewPager(pager);
 
         return rootView;
     }
 
-    class SubOneFragmentPagerAdapter extends FragmentPagerAdapter implements IconPagerAdapter {
-
-        private String[] CONTENT = new String[] {  "Telephone", "Train", "Airplane", "Call", };
-        private int[] ICONS = new int[] {
-                R.drawable.ic_telephone,
-                R.drawable.ic_train,
-                R.drawable.ic_airplane,
-                R.drawable.ic_call,
-        };
-
-        public SubOneFragmentPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return SimpleContentFragment.newInstance(CONTENT[position % CONTENT.length]);
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return CONTENT[position % CONTENT.length].toUpperCase();
-        }
-
-        @Override
-        public int getIconResId(int index) {
-            return ICONS[index];
-        }
-
-        @Override
-        public int getCount() {
-            return CONTENT.length;
-        }
-    }
 }
