@@ -12,6 +12,7 @@ import com.viewpagerindicator.TabPageIndicator;
 
 public class MainActivity extends FragmentActivity {
 
+    ViewPager pager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +21,20 @@ public class MainActivity extends FragmentActivity {
 
         FragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager());
 
-        ViewPager pager = (ViewPager)findViewById(R.id.pager);
+        pager = (ViewPager)findViewById(R.id.pager);
         pager.setAdapter(adapter);
 
         TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
         indicator.setViewPager(pager);
+    }
+
+    public Fragment getFragment(int position) {
+        String name = makeFragmentName(pager.getId(), position);
+        return  getSupportFragmentManager().findFragmentByTag(name);
+    }
+
+    private static String makeFragmentName(int viewId, int index) {
+        return "android:switcher:" + viewId + ":" + index;
     }
 
     class SimpleFragmentPagerAdapter extends FragmentPagerAdapter implements IconPagerAdapter {
@@ -45,6 +55,9 @@ public class MainActivity extends FragmentActivity {
         public Fragment getItem(int position) {
             if(position == 0) {
                 return new SubOneFragment();
+            }
+            if(position == 1) {
+                return new SubTwoFragment();
             }
             return SimpleContentFragment.newInstance(CONTENT[position % CONTENT.length]);
         }
