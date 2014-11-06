@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main_tab_texts">
+        <item>Airplane</item>
+        <item>Call</item>
+        <item>Telephone</item>
+        <item>Train</item>
+    </string-array>
+
+    <integer-array name="main_tab_icons">
+        <item>@drawable/ic_airplane</item>
+        <item>@drawable/ic_call</item>
+        <item>@drawable/ic_telephone</item>
+        <item>@drawable/ic_train</item>
+    </integer-array>
+
+    <string-array name="main_tab_contents">
+        <item>main_tab_contents 1</item>
+        <item>main_tab_contents 2</item>
+        <item>main_tab_contents 3</item>
+        <item>main_tab_contents 4</item>
+    </string-array>
+
+    <string-array name="sub_one_texts">
+        <item>Telephone</item>
+        <item>Train</item>
+        <item>Airplane</item>
+        <item>Call</item>
+    </string-array>
+
+    <integer-array name="sub_one_icons">
+        <item>@drawable/ic_telephone</item>
+        <item>@drawable/ic_train</item>
+        <item>@drawable/ic_airplane</item>
+        <item>@drawable/ic_call</item>
+    </integer-array>
+
+    <string-array name="sub_one_contents">
+        <item>sub_one_contents 1</item>
+        <item>sub_one_contents 2</item>
+        <item>sub_one_contents 3</item>
+        <item>sub_one_contents 4</item>
+    </string-array>
+</resources>

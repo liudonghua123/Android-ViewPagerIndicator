@@ -19,7 +19,10 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager());
+        String[] titles = getApplicationContext().getResources().getStringArray(R.array.main_tab_texts);
+        int[] icons = Utils.getResourceIdArray(this, R.array.main_tab_icons);
+        String[] contents = getApplicationContext().getResources().getStringArray(R.array.main_tab_contents);
+        FragmentPagerAdapter adapter = new MainPagerAdapter(getSupportFragmentManager(), titles, icons, contents);
 
         pager = (ViewPager)findViewById(R.id.pager);
         pager.setAdapter(adapter);

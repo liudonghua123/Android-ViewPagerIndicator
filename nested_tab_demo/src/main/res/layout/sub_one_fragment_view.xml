@@ -6,7 +6,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-    <com.liudonghua.android.demo.nestedtabdemo.CustomTabPageIndicator
+    <!--
+    com.viewpagerindicator.IconPagerAdapter
+    com.viewpagerindicator.TabPageIndicator
+    com.liudonghua.android.demo.nestedtabdemo.CustomTabPageIndicator
+    -->
+    <com.viewpagerindicator.TabPageIndicator
         android:id="@+id/indicator"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"

@@ -26,12 +26,15 @@ public class SubOneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.sub_one_fragment_view, null);
 
+        String[] titles = getActivity().getResources().getStringArray(R.array.sub_one_texts);
+        int[] icons = Utils.getResourceIdArray(getActivity(), R.array.sub_one_icons);
+        String[] contents = getActivity().getResources().getStringArray(R.array.sub_one_contents);
         FragmentPagerAdapter adapter = new SubOneFragmentPagerAdapter(getChildFragmentManager());
 
         pager = (ViewPager)rootView.findViewById(R.id.pager);
         pager.setAdapter(adapter);
 
-        TabPageIndicator indicator = (CustomTabPageIndicator)rootView.findViewById(R.id.indicator);
+        TabPageIndicator indicator = (TabPageIndicator)rootView.findViewById(R.id.indicator);
         indicator.setViewPager(pager);
 
         return rootView;
